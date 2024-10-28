@@ -1,12 +1,5 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# [Lee Marchant]
+## [Assignment #7]
+## [Submission date: 10/28/24]
 ## Worked with/sources 
-* example
-* example
-* example
-* example
-## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* ChatGPT. (2024, October 28). "Does the split function create a list?" Generated using OpenAI. https://chat.openai.com/
