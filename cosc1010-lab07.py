@@ -1,12 +1,9 @@
-# Your Name Here
+# Lee Marchant
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
-# Sources, people worked with, help given to: 
-# your
-# comments
-# here
+# 10/28/24
+# Lab 7
+# Lab Section: 14
+# Sources: ChatGPT. (2024, October 28). "Does the split function create a list?" Generated using OpenAI. https://chat.openai.com/
 
 
 # Prompt the user for an upper bound 
@@ -18,6 +15,17 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
+
+while(True):
+    upbound = input("Please enter a positive number as an upper bound. ")
+    if upbound.isdigit() and int(upbound) > 0:
+        upbound = int(upbound)
+        break
+    else:
+        print(f"It appears you haven't entered a proper positive number.")
+
+for num in range(1, upbound + 1):
+        factorial *= num
 
 print(f"The result of the factorial based on the given bound is {factorial}")
 
@@ -37,7 +45,27 @@ print("*"*75)
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
 
+error2 = "It seems you haven't entered a valid number. Please try again. "
+active = True
 num_sum = 0 
+print(f'Please enter some numbers for me to add up. Type "exit" when you are done.')
+
+while active:
+    number = input("Enter a number: ")
+    if number.lower() == "exit":
+        active = False
+    else:
+        if number.isdigit():
+            num_sum += int(number)
+        elif '-' in number:
+            number = number.replace("-", "")
+            if number.isdigit():
+                num_sum -= int(number)
+            else:
+                print(error2)
+        else:
+            print(error2)
+    
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +87,28 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+while(True):
+    calc = input("Please enter your calculation: ")
+    if calc.lower() == "exit":
+        break
+    else:
+        if "+" in calc:
+            calc = calc.replace(" ", "")
+            new_calc = calc.split("+")
+            print(int(new_calc[0])+int(new_calc[1]))
+        elif "-" in calc:
+            calc = calc.replace(" ", "")
+            new_calc = calc.split("-")
+            print(int(new_calc[0])-int(new_calc[1]))
+        elif "/" in calc:
+            calc = calc.replace(" ", "")
+            new_calc = calc.split("/")
+            print(int(new_calc[0])/int(new_calc[1]))
+        elif "*" in calc:
+            calc = calc.replace(" ", "")
+            new_calc = calc.split("*")
+            print(int(new_calc[0])*int(new_calc[1]))
+        elif "%" in calc:
+            calc = calc.replace(" ", "")
+            new_calc = calc.split("%")
+            print(int(new_calc[0])%int(new_calc[1]))
